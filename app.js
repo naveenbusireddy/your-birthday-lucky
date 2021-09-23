@@ -6,7 +6,8 @@ const outputBox = document.querySelector("#output-box");
 // let sum = 0;
 function checkLuckyNumber(sum, luckyValue) 
 {
-    if(sum%luckyValue===0)
+    if(sum&&luckyValue) {
+        if(sum%luckyValue===0)
         {
             outputBox.innerText="your Birthday is lucky";
         }
@@ -14,6 +15,11 @@ function checkLuckyNumber(sum, luckyValue)
         {
             outputBox.innerText="Your Birthday is not lucky";
         }
+    }
+    else {
+        outputBox.innerText="Both Birthday and Lucky Number are required!"
+    }
+   
 }
 
 function checkBirthdayLuckyNumber() {
