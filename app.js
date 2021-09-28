@@ -20,15 +20,21 @@ function calculateSum(dob) {
 }
 
 function checkLuckyNumber(sum, luckyValue) {
-    if (sum && luckyValue) {
-        if (sum % luckyValue === 0) {
-            outputBox.innerText = "your Birthday is lucky 😊😊";
-        } else {
-            outputBox.innerText = "Your Birthday is not lucky 😫😫";
-        }
-    } else {
-        outputBox.innerText = "Both Birthday and Lucky Number are required! 😡"
+    if(luckyValue < 0) {
+        outputBox.innerText = "Please enter the positive values only!!";
     }
+    else {
+        if (sum && luckyValue) {
+            if (sum % luckyValue === 0) {
+                outputBox.innerText = "your Birthday is lucky 😊😊";
+            } else {
+                outputBox.innerText = "Your Birthday is not lucky 😫😫";
+            }
+        } else {
+            outputBox.innerText = "Both Birthday Date and Lucky Number are required! 😡"
+        }
+    }
+    
 }
 
 checkButton.addEventListener("click", checkBirthdayLuckyNumber);
